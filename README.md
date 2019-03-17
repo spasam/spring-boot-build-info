@@ -4,6 +4,7 @@ This plugin generates properties file(s) that can be consumed by [Spring Boot Ac
 
 -----
 [![Plugin](https://img.shields.io/badge/Gradle%20Plugin-latest-green.svg)](https://plugins.gradle.org/plugin/com.pasam.gradle.buildinfo)
+[![Build Status](https://travis-ci.org/spasam/spring-boot-build-info.svg?branch=master)](https://travis-ci.org/spasam/spring-boot-build-info)
 -----
 
 ## Prerequisites
@@ -26,7 +27,7 @@ Add the following in your `build.gradle plugins` section:
 ```groovy
 plugins {
   ...
-  id 'com.pasam.gradle.buildinfo' version '0.1.0'
+  id 'com.pasam.gradle.buildinfo' version '0.1.1'
   ...
 }
 ```
@@ -66,7 +67,7 @@ git.total.commit.count=25
 build.artifact = spring-boot-build-info
 build.name = spring-boot-build-info
 build.group = com.pasam
-build.version = 0.1.0
+build.version = 0.1.1
 build.time = 2019-03-17T22:42:50.131910Z
 build.source-compatibility = 11
 build.target-compatibility = 11
