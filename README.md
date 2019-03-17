@@ -15,7 +15,7 @@ This plugin generates properties file(s) that can be consumed by [Spring Boot Ac
 plugins {
   ...
   id 'java'
-  id 'org.springframework.boot' version '2.1.2.RELEASE'
+  id 'org.springframework.boot' version '2.1.3.RELEASE'
   ...
 }
 ```
@@ -77,7 +77,81 @@ build.java-version = 11.0.1
 build.os-arch = x86_64
 build.os-name = Mac OS X
 build.os-version = 10.14.3
-build.dependencies.spring-boot = 2.1.2.RELEASE
+build.dependencies.spring-boot = 2.1.3.RELEASE
 build.dependencies.activation = 1.1
 ...
+```
+
+With Spring Boot actuator enabled, actuator should serve up `git` and `build-info` properties as JSON. Accessing `<host>:<mgmg-port>/<actuator-info-endpoint>` should dump JSON similar to:
+
+```json
+{
+  "git": {
+    "branch": "master",
+    "build": {
+      "time": "2019-03-17T23:29:20Z",
+      "version": "0.1.1",
+      "user": {
+        "name": "Seshu Pasam",
+        "email": "email@example.com"
+      },
+      "host": "my-host"
+    },
+    "commit": {
+      "time": "2019-03-15T22:32:25Z",
+      "message": {
+        "full": "Commit message full",
+        "short": "Commit message fshort"
+      },
+      "id": {
+        "describe": "",
+        "abbrev": "14b1431",
+        "full": "14b1431cfee81908c1ca70bda79b9e28625cfbd2"
+      },
+      "user": {
+        "email": "email@example.com",
+        "name": "Seshu Pasam"
+      }
+    },
+    "dirty": "true",
+    "tags": "1.30.0-rc6,1.30.0-rc7",
+    "total": {
+      "commit": {
+        "count": "28"
+      }
+    },
+    "closest": {
+      "tag": {
+        "commit": {
+          "count": ""
+        },
+        "name": ""
+      }
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:spasam/spring-boot-build-info"
+      }
+    }
+  },
+  "build": {
+    "dependencies": {
+      "spring-boot": "2.1.3.RELEASE",
+      "activation": "1.1"
+    },
+    "os-arch": "x86_64",
+    "version": "0.1.1",
+    "user-name": "spasam",
+    "os-name": "Mac OS X",
+    "source-compatibility": "11",
+    "java-vendor": "Oracle Corporation",
+    "name": "spring-boot-build-info",
+    "time": "2019-03-17T23:29:19.531Z",
+    "artifact": "spring-boot-build-info",
+    "group": "com.pasam",
+    "java-version": "11.0.1",
+    "target-compatibility": "11",
+    "os-version": "10.14.3"
+  }
+}
 ```
