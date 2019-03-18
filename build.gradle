@@ -31,7 +31,7 @@ dependencies {
 }
 
 group = 'com.pasam.gradle.buildinfo'
-version = '0.1.2'
+version = '0.1.3'
 
 targetCompatibility = '1.8'
 sourceCompatibility = '1.8'
@@ -40,7 +40,7 @@ publishing {
   publications {
     pluginPublication (MavenPublication) {
       groupId project.group
-      artifactId 'com.pasam.gradle.buildinfo'
+      artifactId 'spring-boot-build-info'
       version project.version
 
       from components.java

@@ -27,7 +27,7 @@ Add the following in your `build.gradle plugins` section:
 ```groovy
 plugins {
   ...
-  id 'com.pasam.gradle.buildinfo' version '0.1.2'
+  id 'com.pasam.gradle.buildinfo' version '0.1.3'
   ...
 }
 ```
