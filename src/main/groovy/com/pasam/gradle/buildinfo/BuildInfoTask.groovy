@@ -75,7 +75,7 @@ class BuildInfoTask extends DefaultTask {
       project.sourceSets.main.runtimeClasspath.each {
         def parts = it.name.split('(?<=\\D)\\-(?=\\d)')
         if (parts.length == 2 && parts[1].endsWith('.jar')) {
-          writer.writeLine('build.dependencies.' + parts[0] + ' = ' + parts[1].substring(0, parts[1].length() - 4))
+          writer.writeLine('build.dependencies.' + parts[0].replace('.', '-') + ' = ' + parts[1].substring(0, parts[1].length() - 4))
         }
       }
     }
