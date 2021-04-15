@@ -27,11 +27,11 @@ repositories {
 dependencies {
   implementation gradleApi()
   implementation localGroovy()
-  implementation 'gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:2.0.0'
+  implementation 'gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:2.2.4'
 }
 
 group = 'com.pasam.gradle.buildinfo'
-version = '0.1.3'
+version = '0.1.4'
 
 targetCompatibility = '1.8'
 sourceCompatibility = '1.8'
